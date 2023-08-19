@@ -67,8 +67,8 @@ add_subdirectory(zxing/bigint)
 add_subdirectory(zxing/zxing)
 
 target_link_libraries(qzxing
-    Qt${QT_MAJOR}::Core
-    Qt${QT_MAJOR}::Gui)
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Gui)
 
 if(QZXING_MULTIMEDIA)
     target_link_libraries(qzxing Qt${QT_MAJOR}::Multimedia)
@@ -77,9 +77,9 @@ endif(QZXING_MULTIMEDIA)
 
 if(QZXING_USE_QML)
     target_link_libraries(qzxing
-        Qt${QT_MAJOR}::Svg
-        Qt${QT_MAJOR}::Quick
-        Qt${QT_MAJOR}::QuickControls2)
+        Qt${QT_VERSION_MAJOR}::Svg
+        Qt${QT_VERSION_MAJOR}::Quick
+        Qt${QT_VERSION_MAJOR}::QuickControls2)
     target_compile_definitions(qzxing PUBLIC -DQZXING_QML)
 endif(QZXING_USE_QML)
 
