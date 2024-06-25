@@ -4,8 +4,8 @@ project(QZXing)
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Gui REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Gui REQUIRED)
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Multimedia Svg Quick QuickControls2)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Multimedia Svg Quick QuickControls2)
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Multimedia Svg Quick)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Multimedia Svg Quick)
 
 SET(BIGINT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/zxing/bigint)
 SET(WIN32_DIR  ${CMAKE_CURRENT_SOURCE_DIR}/zxing/win32/zxing)
@@ -78,8 +78,7 @@ endif(QZXING_MULTIMEDIA)
 if(QZXING_USE_QML)
     target_link_libraries(qzxing
         Qt${QT_VERSION_MAJOR}::Svg
-        Qt${QT_VERSION_MAJOR}::Quick
-        Qt${QT_VERSION_MAJOR}::QuickControls2)
+        Qt${QT_VERSION_MAJOR}::Quick)
     target_compile_definitions(qzxing PUBLIC -DQZXING_QML)
 endif(QZXING_USE_QML)
 
